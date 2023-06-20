@@ -1,0 +1,18 @@
+<%- include('../partials/head.ejs') %>
+<section class="section-unsubscribe">
+    <div class="div-unsuscribe">
+        <p>Ingrese su correo para desuscribirse:</p>
+        <div class="">
+            <form action="/unsubscribe" method="post">
+                <input class="input-unsubscribe" type="email" name="unsubscribe" placeholder="Ingrese su correo">
+                <button type="submit" class="btn-unsubscribe">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <div>
+        <h5><%=Mensaje %></h5>
+    </div>
+</section>
+
+
+<%- include('../partials/footer.ejs') %>

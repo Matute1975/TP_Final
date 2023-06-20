@@ -1,0 +1,152 @@
+/* Footer CSS */
+:root{
+    --miColor: #F8D728;
+}    
+*{
+    font-family: 'Roboto', sans-serif;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.section-footer{
+    background-color: #F8F8F8;
+    display: flex;
+    gap: 1rem;
+    padding-top: 3rem;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.div-footer-mail{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--miColor) ;
+    width: 90%;
+    height: 12.5rem;
+    border-radius: 7px;
+}
+.div-footer-mail > p{
+    margin:2rem;
+    font-size: 0.9rem;
+    color: gray;    
+}
+.input-footer{
+    border:none;
+    border-bottom: gray 2px solid;
+    background-color: var(--miColor);
+    width: 80%;
+    margin:2rem;
+    text-transform: lowercase;
+    font-size: 0.9rem;
+    outline: none;
+}
+.div-input-footer{
+    position: relative;
+}
+.IconMayor{
+    position:absolute;
+    color:gray;
+    right: 11%;
+    top: 40%;
+    transform: translateY(-50%);
+}
+.btn-submit-pages2{
+    border: none;
+    position:absolute;
+    background-color: var(--miColor);
+    right: 11%;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.IconFooter{              
+    color: black;
+    margin-left: 15px;
+}
+.div-seguinos-footer{
+    display: flex;
+    color:gray;
+    font-weight: bold;
+    margin-top:1.5rem;
+    margin-bottom: 1rem;
+    /* align-items: center;  */
+}
+.nuestra-tienda-footer{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content:flex-start;
+    gap:4rem;
+}
+.div-comprarCompañiaAyuda-footer{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+.titulos-footer{
+    font-weight: bolder;
+}
+.parrafosFooter{  
+    font-size: 0.9rem;
+    color: gray;   
+}
+.copyRigth-footer{
+   display: flex;
+   justify-content: space-between;
+   border-top: gray solid 3px;
+   width: 100%;
+   gap: 1.5rem;
+}
+.pie_footer{
+    display: flex;
+    gap: 40px;
+    width: 65%;
+    justify-content: flex-end;
+}
+/* CSS subscripcion / desubscribir */
+
+/* .msg-subscripcion{
+    text-align:justify;
+    font-style: italic;
+}
+.msg-subscripcion > a{
+    color: var(--miColor);
+} */
+.subscripcion{
+    text-align: center;
+    margin-top:50px;
+    margin-bottom: 50px;
+}
+.section-unsubscribe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:50px;
+    margin-bottom: 50px;
+}
+.div-unsuscribe{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--miColor);
+    width: 500px;
+    height: 8rem;
+    border-radius: 7px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.input-unsubscribe{
+    border:none;
+    border-bottom: gray 2px solid;
+    background-color: var(--miColor);
+    width: 70%;
+    /* margin:2rem; */
+    text-transform: lowercase;
+    font-size: 0.9rem;
+    outline: none;
+}
+.btn-unsubscribe{
+    color: black;
+
+    
+}

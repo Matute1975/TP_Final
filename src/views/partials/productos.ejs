@@ -1,0 +1,46 @@
+
+<h3 class="titPages2">GALERIA DE PRODUCTOS</h3>
+<section>
+    <div class="linksPages2">
+        <a href="/productos">TODOS</a>
+        <a href="/hombre">HOMBRE</a>
+        <a href="/mujer">MUJER</a>
+        <a href="/ninos">NIÑOS</a>
+        <a href="/nuevos">NUEVOS</a>
+        <a href="/antiblue">ANTI BLUE</a>
+    </div>
+    
+        <div class="contenedorPadre">
+            <% for (let i=0; i < datos.length; i++) { %>
+                <div class="tarjetaPage2">
+                    <img src="<%=datos[i].image[0] %>" class="imgPages2" alt="">
+                    <div class="textoTarjetasPages2">
+                        <div class="contenedorTextoPage2">
+                            <p class="textoPages2"> <%=datos[i].trademark %> </p>
+                            <p class="textoPages2"><b>$ <%=datos[i].price %></b></p>
+                        </div>  
+                        <button class="btn-page2">ENVIAR AL CARRITO</button>
+                    </div>
+                </div>  
+            <% } %>
+        </div>
+
+        <div class="siguientePage2">
+            <% if(page==1){ %>
+                <a href="#" class="btn-sgte-page2" style="pointer-events: none; cursor: not-allowed; opacity: 0.5;"><i class="bi bi-chevron-left iconSiguientePage2"></i></a>
+            <%}else { %>
+                <a href="/productos/<%= parseInt(page) - 1 %>" class="btn-sgte-page2"><i class="bi bi-chevron-left iconSiguientePage2"></i></a>
+            <% } %>
+                          
+            <p> <%= page %> de <%= pages %> </p>
+
+            <% if(page >= pages) { %>
+                <a href="#" class="btn-sgte-page2" style="pointer-events: none; cursor: not-allowed; opacity: 0.5;"><i class="bi bi-chevron-right iconSiguientePage2"></i></a>
+            <%}else { %>
+                <a href="/productos/<%= parseInt(page) + 1 %>" class="btn-sgte-page2"><i class="bi bi-chevron-right iconSiguientePage2"></i></a>
+            <%} %>
+            
+        </div>  
+   
+   
+</section>
