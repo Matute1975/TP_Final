@@ -22,7 +22,7 @@ a{
     flex-direction: column;
     background-color: var(--miColor) ;
     width: 90%;
-    height: 12.5rem;
+    /* height: 12.5rem; */
     border-radius: 7px;
 }
 .div-footer-mail > p{
@@ -112,6 +112,12 @@ a{
 .msg-subscripcion > a{
     color: var(--miColor);
 } */
+.muestra-mensaje-footer{
+    text-align: center;
+    font-style: italic;
+    margin: 10px;
+
+}
 .subscripcion{
     text-align: center;
     margin-top:50px;

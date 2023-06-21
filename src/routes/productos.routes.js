@@ -4,8 +4,29 @@ import mongoose from "mongoose";
 
 const router=express.Router()
 
-router.get('/',(req,res)=>{
-    res.render('index');
+router.get('/', async(req,res)=>{
+    let cantPorPage = 6 //cantidad por pagina a mostrar.
+    let page=req.params.page || 1 //si no recibo una pagina del usuario por defecto empezara en la primera.
+    try{
+       const totalDocumentos= await productos.find({})//cuento la cantidad de docuemntos de la collection.
+       
+       //console.log("cantidad de documentos:",totalDocumentos.length)
+       if (totalDocumentos.length == 0 ){
+                const datos=[]                
+                res.render('index',{Mensaje:"No existen productos por el momento con esta categoria.",datos,page,pages:1,selectedTag:'productos'})
+       }else {
+            let pages=Math.ceil(totalDocumentos.length/cantPorPage)//redondeo la cantidad de paginas hacia arriba si es decimal.
+            //console.log("total de archivos",totalDocumentos.length, "total de paginas:",pages)
+            const datos= await productos.find({})//busque todos los datos.
+                .skip((cantPorPage * page) - cantPorPage)//ira saltando de a 6 elementos al mostrar.
+                .limit(cantPorPage) //limite de cuantos elementos quiero mostrar por pagina.
+                
+                res.render('index',{Mensaje:"",datos,page,pages,selectedTag:'productos'})// envio Mensaje, los datos de la collection, pagina actual, total de paginas
+        }   
+    }catch(error){
+        console.log(error)
+        res.status(500).json({mensaje:'Error con la DB'})
+    }
 })    
 
 router.get ('/productos',async (req,res,next)=>{
@@ -164,76 +185,6 @@ router.get('/antiblue/:page',async (req,res)=>{
         res.status(500).json({mensaje:'Error con la DB'})
     }
 })
-
-// router.get('/productos',async (req,res)=>{
-//     try{
-//         const muestro= await productos.find({})
-//         //res.status(200).json(muestroTodo)
-//         //console.log(muestroTodo)
-//         console.log('entre en muestro todos los productos')
-//         res.render('pages/index',{muestro:muestro})//paso un objeto de esta manera
-        
-//     }catch(error){
-//         console.log(error)
-//         res.status(500).json({mensaje:'Error con la DB'})
-//     }
-// })
-
-
-// router.get('/mujer',async (req,res)=>{
-//     try{
-//         const muestro= await productos.find({tags: {$in: ["mujer", "unisex"]}})
-//         //res.status(200).json(muestroTodo)
-//         //console.log(muestroTodo)
-//         console.log('entre en mujeres')
-//         res.render('pages/index',{muestro:muestro})//paso un objeto de esta manera
-        
-//     }catch(error){
-//         console.log(error)
-//         res.status(500).json({mensaje:'Error con la DB'})
-//     }
-// })
-
-// router.get('/ninos',async (req,res)=>{
-//     try{
-//         const muestro= await productos.find({tags: {$in: ['niños']}})
-//         //res.status(200).json(muestroTodo)
-//         //console.log(muestroTodo)
-//         console.log('entre en niños')
-//         res.render('pages/index',{muestro:muestro})//paso un objeto de esta manera
-        
-//     }catch(error){
-//         console.log(error)
-//         res.status(500).json({mensaje:'Error con la DB'})
-//     }
-// })
-// router.get('/nuevos',async (req,res)=>{
-//     try{
-//         const muestro= await productos.find({tags: {$in: ['nuevos']}})
-//         //res.status(200).json(muestroTodo)
-//         //console.log(muestroTodo)
-//         console.log('entre en nuevos')
-//         res.render('pages/index',{muestro:muestro})//paso un objeto de esta manera
-        
-//     }catch(error){
-//         console.log(error)
-//         res.status(500).json({mensaje:'Error con la DB'})
-//     }
-// })
-// router.get('/antiblue',async (req,res)=>{
-//     try{
-//         const muestro= await productos.find({tags: {$in: ['Anti Blue','antiblue','anti blue']}})
-//         //res.status(200).json(muestroTodo)
-//         //console.log(muestroTodo)
-//         console.log('entre en antiblue')
-//         res.render('pages/index',{muestro:muestro})//paso un objeto de esta manera
-        
-//     }catch(error){
-//         console.log(error)
-//         res.status(500).json({mensaje:'Error con la DB'})
-//     }
-// })
-
 
 // router.post('/agregar-productos',async(req,res)=>{
 //     try{

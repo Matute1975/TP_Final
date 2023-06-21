@@ -1,6 +1,6 @@
 
 <h3 class="titPages2">GALERIA DE PRODUCTOS</h3>
-<section>
+<section class="section-page2">
     <div class="linksPages2">
         <a href="/productos">TODOS</a>
         <a href="/hombre">HOMBRE</a>
@@ -9,15 +9,16 @@
         <a href="/nuevos">NUEVOS</a>
         <a href="/antiblue">ANTI BLUE</a>
     </div>
-    
+    <h2><%=Mensaje %></h2>
         <div class="contenedorPadre">
             <% for (let i=0; i < datos.length; i++) { %>
                 <div class="tarjetaPage2">
-                    <img src="<%=datos[i].image[0] %>" class="imgPages2" alt="">
+                    <img src="<%=datos[i].image[0] %>" class="imgPages2" alt="<%=datos[i]._id %>">
                     <div class="textoTarjetasPages2">
                         <div class="contenedorTextoPage2">
-                            <p class="textoPages2"> <%=datos[i].trademark %> </p>
-                            <p class="textoPages2"><b>$ <%=datos[i].price %></b></p>
+                            <p class="textoPages2"> <%=datos[i].trademark.toUpperCase() %> </p>
+                            <p class="textoPages2"><b>$ <%=datos[i].price.toLocaleString('es-ES',{minimumFractionDigits: 2,
+                                maximumFractionDigits: 2}) %></b></p>
                         </div>  
                         <button class="btn-page2">ENVIAR AL CARRITO</button>
                     </div>

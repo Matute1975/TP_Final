@@ -39,27 +39,9 @@ app.use(bodyParser.urlencoded({extended:true}))//para que pueda entender formula
 app.use(productosRouter)//necesaria para llamar las rutas desde navegador definidas en /src/routes/productos.routes.js
 app.use(publicidadRouter)//necesaria para llamar las rutas desde navegador definidas en /src/routes/publicidad.routes.js
 
-
-// app.get('/',async (req,res)=>{ //pagina inicial.
-//     try{
-//         const muestro= await productos.find({})
-//         //console.log(muestroTodo)
-//         let cantidadPaginas=muestro.length/6
-//         if(cantidadPaginas === 0){
-//             res.render('pages/index',{Mensaje:"No existen productos que mostrar en este momento.",muestro: muestro, inicial:inicial, incremento:incremento, cantidadPaginas:cantidadPaginas, page:page})
-//         }else{
-//             //console.log("Parte decimal:", (cantidadPaginas % 1))
-//             //console.log("parte entera:", (Math.floor(cantidadPaginas)))
-//             cantidadPaginas= cantidadPaginas % 1 > 0 ? Math.ceil(cantidadPaginas) : Math.floor(cantidadPaginas) //redondeo hacia arriba si es decimal (Math.ceil) o no si es entera (Math.floor).
-//             res.render('pages/index',{Mensaje:"", muestro: muestro, inicial:inicial, incremento:incremento, cantidadPaginas:cantidadPaginas, page:page})//paso un objeto de esta manera
-//         }
-//     }catch(error){
-//         console.log(error)
-//         res.status(500).json({mensaje:'Error con la DB'})
-//     }
-   
-    
-// })
+app.get('/',(req,res)=>{
+    res.render('index');
+})    
 
 app.get('/*',(req,res)=>{
     res.status(404).json({mensaje:'Error 404 No existe la direccion ingresada.'})

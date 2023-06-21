@@ -3,21 +3,21 @@
 <h3 class="titPages2">GALERIA DE PRODUCTOS</h3>
 <section class="section-page2">
     <div class="linksPages2">
-        <a href="/productos/1" class="<%=selectedTag === 'productos' ? 'selected' : '' %>">TODOS</a>
+        <a href="/productos" class="<%=selectedTag === 'productos' ? 'selected' : '' %>">TODOS</a>
         <a href="/hombre/1" class="<%=selectedTag === 'hombre' ? 'selected' : '' %>">HOMBRE</a>
         <a href="/mujer/1" class="<%=selectedTag === 'mujer' ? 'selected' : '' %>">MUJER</a>
         <a href="/ninos/1" class="<%=selectedTag === 'ninos' ? 'selected' : '' %>">NIÑOS</a>
         <a href="/ofertas/1" class="<%=selectedTag === 'ofertas' ? 'selected' : '' %>">OFERTAS</a>
         <a href="/antiblue/1" class="<%=selectedTag === 'antiblue' ? 'selected' : '' %>">ANTI BLUE</a>
     </div>
-    <h2><%=Mensaje %></h2>
+    <h5 class="muestra-mensaje-footer"> <%=Mensaje %> </h5>
         <div class="contenedorPadre">
             <% for (let i=0; i < datos.length; i++) { %>
                 <div class="tarjetaPage2">
                     <img src="<%=datos[i].image[0] %>" class="imgPages2" alt="<%=datos[i]._id %>">
                     <div class="textoTarjetasPages2">
                         <div class="contenedorTextoPage2">
-                            <p class="textoPages2"> <%=datos[i].trademark %> </p>
+                            <p class="textoPages2"> <%=datos[i].trademark.toUpperCase() %> </p>
                             <p class="textoPages2"><b>$ <%=datos[i].price.toLocaleString('es-ES',{minimumFractionDigits: 2,
                                 maximumFractionDigits: 2}) %></b></p>
                         </div>  
