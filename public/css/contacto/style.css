@@ -1,0 +1,16 @@
+.datosContacto{
+    text-align: center;
+ 
+    
+}
+.iconContato{
+   color: var(--miColor);
+   margin-right:1px ;
+}
+.iframe-contacto{
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+    justify-content: space-around;
+    border: red solid 3px;
+}

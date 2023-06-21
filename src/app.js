@@ -15,6 +15,7 @@ import '../mongodb.js';
 import usuariosRouter from './routes/usuarios.routes.js';
 import productosRouter from './routes/productos.routes.js';//necesaria para que reconozca las rutas.
 import publicidadRouter from './routes/publicidad.routes.js';//necesaria para que reconozca las rutas.
+import contactoRouter from './routes/contacto.routes.js'; //necesaria para que reconozca las rutas.
 import ventasRouter from './routes/ventas.routes.js';
 import carritoRouter from './routes/carrito.routes.js';
 import productos from './models/productos.js';
@@ -38,10 +39,11 @@ app.use(bodyParser.urlencoded({extended:true}))//para que pueda entender formula
 //rutas
 app.use(productosRouter)//necesaria para llamar las rutas desde navegador definidas en /src/routes/productos.routes.js
 app.use(publicidadRouter)//necesaria para llamar las rutas desde navegador definidas en /src/routes/publicidad.routes.js
+app.use(contactoRouter)//necesaria para llamar las rutas desde navegador definidas en /src/routes/publicidad.routes.js
 
-app.get('/',(req,res)=>{
-    res.render('index');
-})    
+// app.get('/',(req,res)=>{
+//     res.render('index');
+// })    
 
 app.get('/*',(req,res)=>{
     res.status(404).json({mensaje:'Error 404 No existe la direccion ingresada.'})
