@@ -1,25 +1,30 @@
 <%- include('../partials/head.ejs') %>
-<div class="datosContacto">
-    <p><strong><i class="bi bi-telephone-forward-fill iconContato"></i></strong>011-4152-1542</p>
-    <p><strong><i class="bi bi-envelope-at iconContato"></i></strong>consultas@opticaanteojitos.com.ar</p>
-    <p><strong><i class="bi bi-geo-alt-fill iconContato"></i></strong> Av. 9 De Julio 152 - CABA </p>
-</div>
 
-<div class="iframe-contacto">
-    <div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1641.9373091197763!2d-58.38291266132703!3d-34.60733189323827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacfdd1fa037%3A0xf1b1f26b0eab3053!2sAv.%209%20de%20Julio%2C%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1687316254597!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<section class="sectionContacto">
+    <div class="datosContacto">
+        <p><strong><i class="bi bi-telephone-forward-fill iconContacto"></i></strong>011-4152-1542</p>
+        <p><strong><i class="bi bi-envelope-at iconContacto"></i></strong>consultas@opticaanteojitos.com.ar</p>
+        <p><strong><i class="bi bi-geo-alt-fill iconContacto"></i></strong> Av. 9 De Julio 152 - CABA </p>
     </div>
-    <div>
-        <form action="" type="submit">
-            <label for="">Nombre</label>
-            <input type="text">
 
-            <label for="">Correo</label>
-            <input type="mail">
-
-            <textarea name="" id="" cols="30" rows="10">Envienos un mensaje:</textarea>
-
-            <button>Enviar</button>
-        </form>
-    </div>
+    <div class="iframe-contacto">
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1641.9373091197763!2d-58.38291266132703!3d-34.60733189323827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacfdd1fa037%3A0xf1b1f26b0eab3053!2sAv.%209%20de%20Julio%2C%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1687316254597!5m2!1ses-419!2sar" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div>
+            <form action="" method="submit">
+                <div class="contacto-form">
+                    <div class="nombreCorreoContacto">
+                        <input type="text" class="inputContacto" name="suNombre" placeholder="Su nombre" required>
+                        <input type="email" class="inputContacto" name="suCorreo" placeholder="Su correo" required>
+                    </div>  
+                    <div class="textareaContacto">
+                        <textarea name="suMensaje" id="" cols="30" rows="10" placeholder="Su mensaje" required></textarea>
+                    </div>  
+                    <button class="btnContacto" type="submit">Enviar</button>
+                </div>    
+            </form>
+        </div>
 </div>
+</section>
+<%- include('../partials/footer.ejs') %>

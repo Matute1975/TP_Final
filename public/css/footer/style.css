@@ -1,16 +1,17 @@
 /* Footer CSS */
 :root{
     --miColor: #F8D728;
+    --miColorFondo: #F8F8F8;
 }    
 *{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif!important; 
 }
 a{
     text-decoration: none;
     cursor: pointer;
 }
 .section-footer{
-    background-color: #F8F8F8;
+    background-color: var(--miColorFondo);
     display: flex;
     gap: 1rem;
     padding-top: 3rem;
@@ -105,13 +106,6 @@ a{
 }
 /* CSS subscripcion / desubscribir */
 
-/* .msg-subscripcion{
-    text-align:justify;
-    font-style: italic;
-}
-.msg-subscripcion > a{
-    color: var(--miColor);
-} */
 .muestra-mensaje-footer{
     text-align: center;
     font-style: italic;
@@ -139,7 +133,9 @@ a{
     border-radius: 7px;
     justify-content: center;
     align-items: center;
-    
+}
+.div-unsuscribe > p{
+    color:gray
 }
 .input-unsubscribe{
     border:none;
@@ -150,9 +146,10 @@ a{
     text-transform: lowercase;
     font-size: 0.9rem;
     outline: none;
+    /* color: gray; */
 }
 .btn-unsubscribe{
-    color: black;
+    color: gray;
 
     
 }

@@ -1,16 +1,52 @@
-.datosContacto{
-    text-align: center;
- 
-    
+.sectionContacto{
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-bottom: 50px;
+    font-size: 1rem;
+    background-color: var(--miColorFondo);
 }
-.iconContato{
+.datosContacto{
+    display: flex;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    gap: 60px;
+}
+.iconContacto{
    color: var(--miColor);
-   margin-right:1px ;
+   margin-right:10px ;
 }
 .iframe-contacto{
     display: flex;
-    margin-left: 40px;
-    margin-right: 40px;
     justify-content: space-around;
-    border: red solid 3px;
+}
+.contacto-form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 300px;
+    
+}
+.nombreCorreoContacto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.inputContacto{
+    width: 49%;
+    margin-bottom: 7px;
+    outline: none;
+}
+.textareaContacto{
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+}
+.textareaContacto > textarea{
+    outline: none;
+}
+.btnContacto{
+    background-color: var(--miColor);
+    margin-top: 7px;
+    border: none;
 }
