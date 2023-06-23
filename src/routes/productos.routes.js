@@ -13,7 +13,7 @@ router.get('/', async(req,res)=>{
        //console.log("cantidad de documentos:",totalDocumentos.length)
        if (totalDocumentos.length == 0 ){
                 const datos=[]                
-                res.render('index',{Mensaje:"No existen productos por el momento con esta categoria.",datos,page,pages:1,selectedTag:'productos'})
+                res.render('index',{Mensaje:"No existen productos para mostrar, por el momento.",datos,page,pages:1,selectedTag:'productos'})
        }else {
             let pages=Math.ceil(totalDocumentos.length/cantPorPage)//redondeo la cantidad de paginas hacia arriba si es decimal.
             //console.log("total de archivos",totalDocumentos.length, "total de paginas:",pages)
@@ -37,7 +37,7 @@ router.get ('/productos',async (req,res,next)=>{
        //console.log("cantidad de documentos:",totalDocumentos.length)
        if (totalDocumentos.length == 0 ){
                 const datos=[]                
-                res.render('pages/mostrarProductos',{Mensaje:"No existen productos por el momento con esta categoria.",datos,page,pages:1,selectedTag:'productos'})
+                res.render('pages/mostrarProductos',{Mensaje:"No existen productos para mostrar, por el momento.",datos,page,pages:1,selectedTag:'productos'})
        }else {
             let pages=Math.ceil(totalDocumentos.length/cantPorPage)//redondeo la cantidad de paginas hacia arriba si es decimal.
             //console.log("total de archivos",totalDocumentos.length, "total de paginas:",pages)
@@ -61,7 +61,7 @@ router.get ('/productos/:page',async (req,res,next)=>{//con :page realizo el pag
        //console.log("cantidad de documentos:",totalDocumentos.length)
        if (totalDocumentos.length == 0 ){
                 const datos=[]                
-                res.render('pages/mostrarProductos',{Mensaje:"No existen productos por el momento con esta categoria.",datos,page,pages:1,selectedTag:'productos'})
+                res.render('pages/mostrarProductos',{Mensaje:"No existen productos para mostrar, por el momento.",datos,page,pages:1,selectedTag:'productos'})
        }else {
             let pages=Math.ceil(totalDocumentos.length/cantPorPage)//redondeo la cantidad de paginas hacia arriba si es decimal.
             //console.log("total de archivos",totalDocumentos.length, "total de paginas:",pages)
@@ -80,14 +80,14 @@ router.get('/hombre/:page',async (req,res)=>{
         let cantPorPage = 6 //cantidad por pagina a mostrar.
         let page=req.params.page || 1 //si no recibo una pagina del usuario por defecto empezara en la primera.
         try{
-            const totalDocumentos= await productos.find({tags: {$in: ["hombre", "unisex"]}})
+            const totalDocumentos= await productos.find({category: {$in: ["hombre", "unisex"]}})
             if (totalDocumentos.length == 0 ){
                 const datos=[]                
                 res.render('pages/hombre',{Mensaje:"No existen productos por el momento con esta categoria.",datos,page,pages:1,selectedTag:'hombre'})
             }else {
                     let pages=Math.ceil(totalDocumentos.length/cantPorPage)//redondeo la cantidad de paginas hacia arriba si es decimal.
                     //console.log("total de archivos",totalDocumentos.length, "total de paginas:",pages)
-                    const datos= await productos.find({tags: {$in: ["hombre", "unisex"]}})
+                    const datos= await productos.find({category: {$in: ["hombre", "unisex"]}})
                     .skip((cantPorPage * page) - cantPorPage)//ira saltando de a 6 elementos al mostrar.
                     .limit(cantPorPage) //limite de cuantos elementos quiero mostrar por pagina.
                     res.render('pages/hombre',{Mensaje:"",datos,page,pages,selectedTag:'hombre'})
@@ -102,14 +102,14 @@ router.get('/mujer/:page',async (req,res)=>{
     let cantPorPage = 6 //cantidad por pagina a mostrar.
     let page=req.params.page || 1 //si no recibo una pagina del usuario por defecto empezara en la primera.
     try{
-        const totalDocumentos= await productos.find({tags: {$in: ["mujer", "unisex"]}})
+        const totalDocumentos= await productos.find({category: {$in: ["mujer", "unisex"]}})
         if (totalDocumentos.length == 0 ){
             const datos=[]                
             res.render('pages/mujer',{Mensaje:"No existen productos por el momento con esta categoria.",datos,page,pages:1,selectedTag:'mujer'})
         }else {
                 let pages=Math.ceil(totalDocumentos.length/cantPorPage)//redondeo la cantidad de paginas hacia arriba si es decimal.
                 //console.log("total de archivos",totalDocumentos.length, "total de paginas:",pages)
-                const datos= await productos.find({tags: {$in: ["mujer", "unisex"]}})
+                const datos= await productos.find({category: {$in: ["mujer", "unisex"]}})
                 .skip((cantPorPage * page) - cantPorPage)//ira saltando de a 6 elementos al mostrar.
                 .limit(cantPorPage) //limite de cuantos elementos quiero mostrar por pagina.
                 res.render('pages/mujer',{Mensaje:"",datos,page,pages,selectedTag:'mujer'})
@@ -124,14 +124,14 @@ router.get('/ninos/:page',async (req,res)=>{
     let cantPorPage = 6 //cantidad por pagina a mostrar.
     let page=req.params.page || 1 //si no recibo una pagina del usuario por defecto empezara en la primera.
     try{
-        const totalDocumentos= await productos.find({tags: {$in: ["niños", "kids"]}})
+        const totalDocumentos= await productos.find({category: {$in: ["niños", "kids"]}})
         if (totalDocumentos.length == 0 ){
             const datos=[]                
             res.render('pages/ninos',{Mensaje:"No existen productos por el momento con esta categoria.",datos,page,pages:1,selectedTag:'ninos'})
         }else {
                 let pages=Math.ceil(totalDocumentos.length/cantPorPage)//redondeo la cantidad de paginas hacia arriba si es decimal.
                 //console.log("total de archivos",totalDocumentos.length, "total de paginas:",pages)
-                const datos= await productos.find({tags: {$in: ["ninos", "kids"]}})
+                const datos= await productos.find({category: {$in: ["niños", "kids"]}})
                 .skip((cantPorPage * page) - cantPorPage)//ira saltando de a 6 elementos al mostrar.
                 .limit(cantPorPage) //limite de cuantos elementos quiero mostrar por pagina.
                 res.render('pages/ninos',{Mensaje:"",datos,page,pages,selectedTag:'ninos'})
@@ -168,14 +168,14 @@ router.get('/antiblue/:page',async (req,res)=>{
     let cantPorPage = 6 //cantidad por pagina a mostrar.
     let page=req.params.page || 1 //si no recibo una pagina del usuario por defecto empezara en la primera.
     try{
-        const totalDocumentos= await productos.find({tags: {$in: ["anti blue","antiblue","Anti Blue","AntiBlue"]}})
+        const totalDocumentos= await productos.find({category: {$in: ["anti blue","antiblue","Anti Blue","AntiBlue"]}})
         if (totalDocumentos.length == 0 ){
             const datos=[]                
             res.render('pages/antiblue',{Mensaje:"No existen productos por el momento con esta categoria.",datos,page,pages:1,selectedTag:'antiblue'})
         }else {
                 let pages=Math.ceil(totalDocumentos.length/cantPorPage)//redondeo la cantidad de paginas hacia arriba si es decimal.
                 //console.log("total de archivos",totalDocumentos.length, "total de paginas:",pages)
-                const datos= await productos.find({tags: {$in: ["anti blue","antiblue","Anti Blue","AntiBlue"]}})
+                const datos= await productos.find({category: {$in: ["anti blue","antiblue","Anti Blue","AntiBlue"]}})
                 .skip((cantPorPage * page) - cantPorPage)//ira saltando de a 6 elementos al mostrar.
                 .limit(cantPorPage) //limite de cuantos elementos quiero mostrar por pagina.
                 res.render('pages/antiblue',{Mensaje:"",datos,page,pages,selectedTag:'antiblue'})
