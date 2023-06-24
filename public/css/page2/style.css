@@ -21,8 +21,6 @@
     margin-bottom: 2rem;
 }
 .linksPages2 >a{
-    /* text-decoration: none;
-    cursor: pointer; */
     color:black;
     font-size: 1.1rem;
     font-weight: 400;
@@ -39,20 +37,36 @@
     border-bottom:2px var(--miColor) solid;
     font-weight: bolder;
 }
+.linksLoNuevo{
+    display: flex;
+    width: 30%;
+    justify-content:space-between;
+    margin-bottom: 2rem;
+}
+.linksLoNuevo > a{
+    color:black;
+    font-size: 1.1rem;
+    font-weight: 400;
+    border-bottom:2px rgb(200, 198, 198) solid;
+    padding-bottom: 1rem;
+    min-width: 142px;
+    text-align: center;
+}
+.linksLoNuevo >a:hover{
+    border-bottom:2px var(--miColor) solid;
+    font-weight: bolder;
+}
+.linksLoNuevo a.selected {
+    border-bottom:2px var(--miColor) solid;
+    font-weight: bolder;
+}
 /* contenedor imagenes page 2 */
 .section-page2{
     margin-left: 40px;
     margin-right: 40px;
 }
 .imgPages2{
-    /* max-width: 400px;
-    max-height: 250px; */
     border: 1px var(--miColor) solid;
-    /* max-height: 134px;
-    min-height: 134px;
-    max-width: 203px;
-    min-width: 203px; */
-    
 }
 .textoPages2{
     font-size: 1rem;

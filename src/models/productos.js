@@ -37,13 +37,17 @@ const ProductosSchema = new Schema({
         default: 0,
         max: 0.4,        //descuento maximo del 40%
     },
-    price:{             //precio final. Se autocompleta
+    price:{             //precio final.
         type:Number,
     },
     stock: {            //cantidad disponibles.
         type: Number,
         required: true,
         min: 0,
+    },
+    uploadDate:{ //Fecha de ingreso al local (toma como referencia 2 meses de la fecha de consulta para mostrar en seccion que hay de nuevo)
+        type: Date,
+        default: Date.now,
     },
     image:{
         type: [String], //array de objeto, por si hay varios imagenes.

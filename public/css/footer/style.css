@@ -6,6 +6,9 @@
 *{
     font-family: 'Roboto', sans-serif!important; 
 }
+HTML{
+    scroll-behavior: smooth; /*Esto hace que cuando de click en los botones about, etc, de mi pagina, el deslizamiento sea mas lento.*/
+}
 a{
     text-decoration: none;
     cursor: pointer;
@@ -151,5 +154,41 @@ a{
 .btn-unsubscribe{
     color: gray;
 
-    
+}
+
+/* TERMINOS Y CONDICIONES - POLITICAS DE PRIVACIDAD - TERMINOS DEL SERVICIO */
+
+.section-terminosYCondiciones{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.terminosYCondiciones{
+    display: flex;
+    flex-direction: column;
+    border: var(--miColor) 3px solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.terminosYCondiciones > h1{
+    text-align: center;
+    margin: 25px;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+.terminosYCondiciones > p , .itemLista{
+    text-align:justify;
+}
+.itemLista{
+    text-transform: uppercase;
+    /* font-style: italic; */
+    margin-bottom: 10px;
+}
+.btn-terminos{
+   margin-top:5px;
+   margin-bottom: 40px;
+   border: var(--miColor) 3px solid;
+   border-radius: 7px;
+   font-weight: 300;
 }

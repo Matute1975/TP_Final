@@ -16,11 +16,10 @@ import usuariosRouter from './routes/usuarios.routes.js';
 import productosRouter from './routes/productos.routes.js';//necesaria para que reconozca las rutas.
 import publicidadRouter from './routes/publicidad.routes.js';//necesaria para que reconozca las rutas.
 import contactoRouter from './routes/contacto.routes.js'; //necesaria para que reconozca las rutas.
-import terminosRouter from './routes/terminosYCondiciones.js'; //necesaria para que reconozca las rutas.
+import terminosRouter from './routes/terminosYCondiciones.routes.js'; //necesaria para que reconozca las rutas.
 import ventasRouter from './routes/ventas.routes.js';
 import carritoRouter from './routes/carrito.routes.js';
 import productos from './models/productos.js';
-//import {siguiente} from '../public/js/misFunciones.js'//importo mis funciones.
 const app=express()
 
 // Obtener la ruta del directorio actual utilizando type:module
@@ -40,8 +39,8 @@ app.use(bodyParser.urlencoded({extended:true}))//para que pueda entender formula
 //rutas
 app.use(productosRouter)//necesaria para llamar las rutas desde navegador definidas en /src/routes/productos.routes.js
 app.use(publicidadRouter)//necesaria para llamar las rutas desde navegador definidas en /src/routes/publicidad.routes.js
-app.use(contactoRouter)//necesaria para llamar las rutas desde navegador definidas en /src/routes/publicidad.routes.js
-app.use(terminosRouter)
+app.use(contactoRouter)//necesaria para llamar las rutas desde navegador definidas en /src/routes/contacto.routes.js
+app.use(terminosRouter)//necesaria para llamar las rutas desde navegador definidas en /src/routes/terminosYcondiciones.routes.js
 
 // app.get('/',(req,res)=>{
 //     res.render('index');
