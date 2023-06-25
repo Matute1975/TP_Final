@@ -20,6 +20,9 @@
     display: flex;
     justify-content: space-around;
 }
+.iframeMapa{
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.6);    
+}
 .contacto-form{
     display: flex;
     flex-direction: column;
@@ -36,11 +39,13 @@
     width: 49%;
     margin-bottom: 7px;
     outline: none;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.6);    
 }
 .textareaContacto{
     display: flex;
     flex-direction: column;
     width: 100%; 
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.6);    
 }
 .textareaContacto > textarea{
     outline: none;
@@ -49,4 +54,9 @@
     background-color: var(--miColor);
     margin-top: 7px;
     border: none;
+    border-radius: 7px;
+}
+.btnContacto:hover{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+    transform: translateY(2px);
 }

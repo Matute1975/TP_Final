@@ -61,6 +61,7 @@
     font-weight: bolder;
 }
 /* contenedor imagenes page 2 */
+
 .section-page2{
     margin-left: 40px;
     margin-right: 40px;
@@ -107,6 +108,10 @@
     border: none;
     cursor: pointer;
 }
+.btn-page2:hover{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+    transform: translateY(2px);
+}
 .siguientePage2{
     width: 100%;
     color:black;
@@ -124,5 +129,62 @@
     margin-right: 150px;
 }
 .btn-sgte-page2:hover{
-    scale: 1.2;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+    transform: translateY(2px);
+}
+
+/* PAGINA NUESTRA HISTORIA */
+.sectionNuestraHistoria{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    /* background-image: linear-gradient(to bottom, var(--miColor) 0%, var(--miColorFondo) 100%); */
+    background-image: linear-gradient(to bottom, var(--miColorFondo) 0%, var(--miColor) 25%, var(--miColor) 75%, var(--miColorFondo) 100%);
+    margin:0;
+    align-items: center;
+    
+}
+.titNuestraTienda{
+    border: 3px gray solid;
+    text-align: center;
+    font-size: 3rem;
+    background-color: var(--miColorFondo);
+    width: 450px;
+    margin-top:25px;
+    margin-bottom: 45px;
+    border-radius: 10px;
+}
+.divNuestraHistoria{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-evenly;
+    width:100%;
+    margin-bottom: 35px;
+}
+.imgNuestraHistoria{
+    width: 500px;
+    height: 350px;
+    border: 5px var(--miColorFondo) solid;
+    border-radius: 7px;
+}
+.textoNuestraHistoria{
+    max-width: 500px;
+    /* height:350px; */
+    font-style: oblique;
+    text-align: justify;
+    font-size: 1.3rem;
+    font-weight: 300;
+    align-self: center;
+    
+}
+.btnNuestraHistoria{
+    background-color: var(--miColorFondo);
+    border: black 2px solid;
+    border-radius: 7px;
+    margin-bottom: 30px;
+}
+.btnNuestraHistoria:hover{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+    transform: translateY(2px);
 }

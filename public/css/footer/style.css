@@ -63,6 +63,9 @@ a{
     transform: translateY(-50%);
     cursor: pointer;
 }
+.btn-submit-pages2:hover{
+    transform: translateY(2px);
+}
 .IconFooter{              
     color: black;
     margin-left: 15px;
@@ -153,7 +156,11 @@ a{
 }
 .btn-unsubscribe{
     color: gray;
-
+    border-radius: 7px;
+}
+.btn-unsubscribe:hover{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+    transform: translateY(2px);
 }
 
 /* TERMINOS Y CONDICIONES - POLITICAS DE PRIVACIDAD - TERMINOS DEL SERVICIO */
