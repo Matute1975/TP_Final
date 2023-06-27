@@ -44,7 +44,6 @@ router.get ('/productos',async (req,res,next)=>{
             const datos= await productos.find({})//busque todos los datos.
                 .skip((cantPorPage * page) - cantPorPage)//ira saltando de a 6 elementos al mostrar.
                 .limit(cantPorPage) //limite de cuantos elementos quiero mostrar por pagina.
-                
                 res.render('pages/mostrarProductos',{Mensaje:"",datos,page,pages,selectedTag:'productos'})// envio Mensaje, los datos de la collection, pagina actual, total de paginas
         }   
     }catch(error){

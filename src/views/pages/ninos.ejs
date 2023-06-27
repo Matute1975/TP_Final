@@ -14,7 +14,7 @@
         <div class="contenedorPadre">
             <% for (let i=0; i < datos.length; i++) { %>
                 <div class="tarjetaPage2">
-                    <img src="<%=datos[i].image[0] %>" class="imgPages2" alt="<%=datos[i]._id %>">
+                    <img src="<%=datos[i].image[0] %>" class="imgPages2" alt="<%=datos[i]._id %>" onmouseover=this.src="<%=datos[i].image[1] %>" onmouseout=this.src="<%=datos[i].image[0] %>">
                     <div class="textoTarjetasPages2">
                         <div class="contenedorTextoPage2">
                             <p class="textoPages2"> <%=datos[i].trademark.toUpperCase() %> </p>

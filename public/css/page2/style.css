@@ -139,7 +139,7 @@
     flex-direction: column;
     width:100%;
     /* background-image: linear-gradient(to bottom, var(--miColor) 0%, var(--miColorFondo) 100%); */
-    background-image: linear-gradient(to bottom, var(--miColorFondo) 0%, var(--miColor) 25%, var(--miColor) 75%, var(--miColorFondo) 100%);
+    background-image: linear-gradient(to bottom, var(--miColorFondo) 0%, var(--miColor) 40%, var(--miColor) 65%, var(--miColorFondo) 100%);
     margin:0;
     align-items: center;
     

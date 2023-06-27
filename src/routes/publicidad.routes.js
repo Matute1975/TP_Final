@@ -24,6 +24,26 @@ router.post('/subscribirme',async (req,res)=>{
         res.status(500).json({mensaje:'Error con la DB'})
     }
 })
+//ruta recomendada por chatGPPT, vereos si funciona para modal.
+// router.post('/subscribirme', async (req, res) => {
+//     const nuevoSubscriptor = req.body.correoPublicidad.toLowerCase()
+  
+//     try {
+//       const result = await publicidad.findOne({ email: nuevoSubscriptor })
+//       if (result !== null) {
+//         console.log("El mail ya existe en nuestra base de datos.")
+//         res.json({success: true, mensaje: "¡La dirección ingresada ya se encuentra registrada en nuestra base de datos, recuerda revisar la carpeta Spam de tu correo electrónico!" });
+//       } else {
+//         const subscripcion = new publicidad({ email: nuevoSubscriptor })
+//         await subscripcion.save()
+//         console.log("Se guardó el correo con éxito.")
+//         res.json({success: true, mensaje: "¡Gracias por suscribirte a nuestra página, en breve estarás recibiendo nuestras ofertas imperdibles, recuerda revisar la carpeta Spam de tu correo electrónico!" });
+//       }
+//     } catch (error) {
+//       console.log(error)
+//       res.status(500).json({ mensaje: "Error con la base de datos" })
+//     }
+//   });
 
 router.get('/unsubscribe',(req,res)=>{
     res.render('pages/unsubscribe',{Mensaje:''}) 

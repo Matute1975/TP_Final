@@ -10,13 +10,13 @@
         <div class="contenedorPadre">
             <% for (let i=0; i < datos.length; i++) { %>
                 <div class="tarjetaPage2">
-                    <img src="<%=datos[i].image[0] %>" class="imgPages2" alt="<%=datos[i]._id %>">
+                    <img src="<%=datos[i].image[0] %>" class="imgPages2" alt="<%=datos[i]._id %>" onmouseover=this.src="<%=datos[i].image[1] %>" onmouseout=this.src="<%=datos[i].image[0] %>">
                     <div class="textoTarjetasPages2">
                         <div class="contenedorTextoPage2">
                             <p class="textoPages2"> <%=datos[i].trademark.toUpperCase() %> </p>
                             <p class="textoPages2"><b>$ <%=datos[i].price.toLocaleString('es-ES',{minimumFractionDigits: 2,
                                 maximumFractionDigits: 2}) %></b></p>
-                            <p class="textoPages2">Ingreso: <%=datos[i].uploadDate.toLocaleDateString() %></p>         
+                            <p class="textoPages2">Fecha ingreso: <%=datos[i].uploadDate.toLocaleDateString() %></p>         
                         </div>  
                         <button class="btn-page2">ENVIAR AL CARRITO</button>
                     </div>

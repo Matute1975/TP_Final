@@ -32,6 +32,7 @@ app.set('views', path.join(__dirname, 'views'))//configuro las rutas de las view
 app.set('view engine','ejs') //defino motor de planitlla ejs.
 app.use(express.static('public'))//para que me reconozca los archivos estaticos como css, imagenes, etc.
 
+
 //middlewars
 app.use(bodyParser.json())//para que reconozca los archivos json que pueda recibir del front- (envia cliente).
 app.use(bodyParser.urlencoded({extended:true}))//para que pueda entender formularios.
@@ -54,6 +55,7 @@ app.listen(config.PORT,()=>{ //configuro puerto de escucha de la APP.
     console.log(`Servidor conectado en el puerto ${config.PORT}`)
 })
 
+
 /* 
 //rutas que hice para crear y probar la DB
 app.use(express.json()) //lo puse para crear y probar la DB, no va
@@ -65,3 +67,4 @@ app.use('/productos',productosRouter)
 app.use('/ventas',ventasRouter)
 app.use('/carrito',carritoRouter)
  */
+
